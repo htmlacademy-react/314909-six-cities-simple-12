@@ -2,7 +2,7 @@ import Card from '../../components/card/card';
 type MainSreenProps = {
   offers: number;
 }
-function MainScreen(): JSX.Element {
+function MainScreen(props: MainSreenProps) {
   return (
     <div class="page page--gray page--main">
       <div style={{ display: 'none' }}>
@@ -92,7 +92,7 @@ function MainScreen(): JSX.Element {
           <div class="cities__places-container container">
             <section class="cities__places places">
               <h2 class="visually-hidden">Places</h2>
-              <b class="places__found">312 places to stay in Amsterdam</b>
+              <b class="places__found">{props.offers} places to stay in Amsterdam</b>
               <form class="places__sorting" action="#" method="get">
                 <span class="places__sorting-caption">Sort by</span>
                 <span class="places__sorting-type" tabindex="0">
@@ -109,6 +109,9 @@ function MainScreen(): JSX.Element {
                 </ul>
               </form>
               <div class="cities__places-list places__list tabs__content">
+                <Card />
+                <Card />
+                <Card />
                 <Card />
                 <Card />
               </div>
