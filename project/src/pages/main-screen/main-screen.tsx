@@ -1,10 +1,10 @@
 import Card from '../../components/card/card';
-type MainSreenProps = {
+type MainScreenProps = {
   offers: number;
 }
-function MainScreen(props: MainSreenProps) {
+export default function MainScreen(props: MainScreenProps): JSX.Element {
   return (
-    <div class="page page--gray page--main">
+    <div className="page page--gray page--main" >
       <div style={{ display: 'none' }}>
         <svg xmlns="http://www.w3.org/2000/svg">
           <symbol id="icon-arrow-select" viewBox="0 0 7 4">
@@ -24,25 +24,26 @@ function MainScreen(props: MainSreenProps) {
           </symbol>
         </svg>
       </div>
-      <header class="header">
-        <div class="container">
-          <div class="header__wrapper">
-            <div class="header__left">
-              <a class="header__logo-link header__logo-link--active">
-                <img class="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41">
+      <header className="header">
+        <div className="container">
+          <div className="header__wrapper">
+            <div className="header__left">
+              <a className="header__logo-link header__logo-link--active">
+                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
               </a>
             </div>
-            <nav class="header__nav">
-              <ul class="header__nav-list">
-                <li class="header__nav-item user">
-                  <a class="header__nav-link header__nav-link--profile" href="#">
-                    <div class="header__avatar-wrapper user__avatar-wrapper"></div>
-                    <span class="header__user-name user__name">Oliver.conner@gmail.com</span>
+            <nav className="header__nav">
+              <ul className="header__nav-list">
+                <li className="header__nav-item user">
+                  <a className="header__nav-link header__nav-link--profile" href="#">
+                    <div className="header__avatar-wrapper user__avatar-wrapper">
+                    </div>
+                    <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
                   </a>
                 </li>
-                <li class="header__nav-item">
-                  <a class="header__nav-link" href="#">
-                    <span class="header__signout">Sign out</span>
+                <li className="header__nav-item">
+                  <a className="header__nav-link" href="#">
+                    <span className="header__signout">Sign out</span>
                   </a>
                 </li>
               </ul>
@@ -50,65 +51,65 @@ function MainScreen(props: MainSreenProps) {
           </div>
         </div>
       </header>
-      <main class="page__main page__main--index">
-        <h1 class="visually-hidden">Cities</h1>
-        <div class="tabs">
-          <section class="locations container">
-            <ul class="locations__list tabs__list">
-              <li class="locations__item">
-                <a class="locations__item-link tabs__item" href="#">
+      <main className="page__main page__main--index">
+        <h1 className="visually-hidden">Cities</h1>
+        <div className="tabs">
+          <section className="locations container">
+            <ul className="locations__list tabs__list">
+              <li className="locations__item">
+                <a className="locations__item-link tabs__item" href="#">
                   <span>Paris</span>
                 </a>
               </li>
-              <li class="locations__item">
-                <a class="locations__item-link tabs__item" href="#">
+              <li className="locations__item">
+                <a className="locations__item-link tabs__item" href="#">
                   <span>Cologne</span>
                 </a>
               </li>
-              <li class="locations__item">
-                <a class="locations__item-link tabs__item" href="#">
+              <li className="locations__item">
+                <a className="locations__item-link tabs__item" href="#">
                   <span>Brussels</span>
                 </a>
               </li>
-              <li class="locations__item">
-                <a class="locations__item-link tabs__item tabs__item--active">
+              <li className="locations__item">
+                <a className="locations__item-link tabs__item tabs__item--active">
                   <span>Amsterdam</span>
                 </a>
               </li>
-              <li class="locations__item">
-                <a class="locations__item-link tabs__item" href="#">
+              <li className="locations__item">
+                <a className="locations__item-link tabs__item" href="#">
                   <span>Hamburg</span>
                 </a>
               </li>
-              <li class="locations__item">
-                <a class="locations__item-link tabs__item" href="#">
+              <li className="locations__item">
+                <a className="locations__item-link tabs__item" href="#">
                   <span>Dusseldorf</span>
                 </a>
               </li>
             </ul>
           </section>
         </div>
-        <div class="cities">
-          <div class="cities__places-container container">
-            <section class="cities__places places">
-              <h2 class="visually-hidden">Places</h2>
-              <b class="places__found">{props.offers} places to stay in Amsterdam</b>
-              <form class="places__sorting" action="#" method="get">
-                <span class="places__sorting-caption">Sort by</span>
-                <span class="places__sorting-type" tabindex="0">
+        <div className="cities">
+          <div className="cities__places-container container">
+            <section className="cities__places places">
+              <h2 className="visually-hidden">Places</h2>
+              <b className="places__found">{props.offers} places to stay in Amsterdam</b>
+              <form className="places__sorting" action="#" method="get">
+                <span className="places__sorting-caption">Sort by</span>
+                <span className="places__sorting-type" tabIndex={0}>
                   Popular
-                  <svg class="places__sorting-arrow" width="7" height="4">
-                    <use xlink:href="#icon-arrow-select"></use>
+                  <svg className="places__sorting-arrow" width="7" height="4">
+                    <use xlinkHref="#icon-arrow-select"></use>
                   </svg>
                 </span>
-                <ul class="places__options places__options--custom places__options--opened">
-                  <li class="places__option places__option--active" tabindex="0">Popular</li>
-                  <li class="places__option" tabindex="0">Price: low to high</li>
-                  <li class="places__option" tabindex="0">Price: high to low</li>
-                  <li class="places__option" tabindex="0">Top rated first</li>
+                <ul className="places__options places__options--custom places__options--opened">
+                  <li className="places__option places__option--active" tabIndex={0}>Popular</li>
+                  <li className="places__option" tabIndex={0}>Price: low to high</li>
+                  <li className="places__option" tabIndex={0}>Price: high to low</li>
+                  <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div class="cities__places-list places__list tabs__content">
+              <div className="cities__places-list places__list tabs__content">
                 <Card />
                 <Card />
                 <Card />
@@ -116,14 +117,13 @@ function MainScreen(props: MainSreenProps) {
                 <Card />
               </div>
             </section>
-            <div class="cities__right-section">
-              <section class="cities__map map"></section>
+            <div className="cities__right-section">
+              <section className="cities__map map"></section>
             </div>
           </div>
         </div>
       </main>
-    </div>
+    </div >
   );
 }
 
-export default MainScreen;
