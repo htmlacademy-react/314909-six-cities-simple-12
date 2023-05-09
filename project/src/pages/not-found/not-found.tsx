@@ -1,21 +1,23 @@
 import { Link } from 'react-router-dom';
+import {Helmet} from 'react-helmet-async';
 import './not-found.css';
-import Header from '../../components/header/header';
 
-function NotFound(): JSX.Element {
+export default function NotFound() {
   return (
-    <>
-      <Header/>
-      <section className='not-found'>
-        <h1 className='not-found__title'>
-          Sorry, no such page exists
-        </h1>
-        <Link to='/' className='not-found__link'>
-          Go to home page
-        </Link>
-      </section>
-    </>
+    <div className="page page--gray page--not-found">
+      <Helmet>
+        <title>Six cities: page not found</title>
+      </Helmet>
+
+      <main className="page__main page__main--not-found">
+        <div className="container">
+          <section className="not-found">
+            <h1 className="not-found__title">404</h1>
+            <p>Page Not Found</p>
+            <Link className="not-found__link" to="/">Home Page</Link>
+          </section>
+        </div>
+      </main>
+    </div>
   );
 }
-
-export default NotFound;
